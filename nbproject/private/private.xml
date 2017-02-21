@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/util/DB.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/util/Conexao.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/DAO/PessoaDAO.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/util/ConexaoA.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/VISUAL/frmCadEstado.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/VISUAL/frmPrincipal.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/VISUAL/frmCadPessoa.java</file>
+            <file>file:/home/denilson/NetBeansProjects/Crud/src/DAO/PessoaFisicaDAO.java</file>
+        </group>
+    </open-files>
+</project-private>
