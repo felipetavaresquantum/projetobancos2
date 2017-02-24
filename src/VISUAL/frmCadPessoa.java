@@ -44,7 +44,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         try {
             pst = con.prepareStatement(sqlPessoaF);
             rs = pst.executeQuery();
-            tblUsuarios.setModel(DbUtils.resultSetToTableModel(rs));
+            tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (SQLException error) {
             JOptionPane.showMessageDialog(null, error);
         }
@@ -57,7 +57,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         try {
             pst = con.prepareStatement(sqlPessoaJ);
             rs = pst.executeQuery();
-            tblUsuarios.setModel(DbUtils.resultSetToTableModel(rs));
+            tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (SQLException error) {
             JOptionPane.showMessageDialog(null, error);
         }
@@ -108,7 +108,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
             pf.setIdEndereco(p.getEndereco());
             pf.setContato(p.getContato());
 
-            boolean retorno = PessoaFisicaDAO.cadastrarPesoaFisica(pf);
+            boolean retorno = PessoaFisicaDAO.cadastrarPessoaFisica(pf);
 
             if (retorno) {
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!", "Cadastrar", JOptionPane.INFORMATION_MESSAGE);
@@ -120,7 +120,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         }
     }
 
-    public void pesquisarUsuarios() {
+    public void pesquisarClientes() {
 
         if (cmbTipo.getSelectedItem() == "PJ") {
 
@@ -128,9 +128,9 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
 
             try {
                 pst = con.prepareStatement(sql);
-                pst.setString(1, txtPesquisar.getText() + "%");
+                pst.setString(1, txtPesquisar.getText().toUpperCase() + "%");
                 rs = pst.executeQuery();
-                tblUsuarios.setModel(DbUtils.resultSetToTableModel(rs));
+                tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
             } catch (SQLException error) {
                 JOptionPane.showMessageDialog(null, error);
             }
@@ -141,9 +141,9 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
 
             try {
                 pst = con.prepareStatement(sql);
-                pst.setString(1, txtPesquisar.getText() + "%");
+                pst.setString(1, txtPesquisar.getText().toUpperCase() + "%");
                 rs = pst.executeQuery();
-                tblUsuarios.setModel(DbUtils.resultSetToTableModel(rs));
+                tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
             } catch (SQLException error) {
                 JOptionPane.showMessageDialog(null, error);
             }
@@ -151,22 +151,22 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
     }
 
     public void mostrarItens() {
-        int seleciona = tblUsuarios.getSelectedRow();
-        txtCodigo.setText(tblUsuarios.getModel().getValueAt(seleciona, 0).toString());
-        txtNome.setText(tblUsuarios.getModel().getValueAt(seleciona, 1).toString());
-        txtEmail.setText(tblUsuarios.getModel().getValueAt(seleciona, 2).toString());
-        txtRG.setText(tblUsuarios.getModel().getValueAt(seleciona, 3).toString());
-        txtCPF.setText(tblUsuarios.getModel().getValueAt(seleciona, 4).toString());
-        txtData.setText(tblUsuarios.getModel().getValueAt(seleciona, 5).toString());
-        txtDDD.setText(tblUsuarios.getModel().getValueAt(seleciona, 6).toString());
-        txtFone.setText(tblUsuarios.getModel().getValueAt(seleciona, 7).toString());
-        txtEndereco.setText(tblUsuarios.getModel().getValueAt(seleciona, 8).toString());
-        txtCEP.setText(tblUsuarios.getModel().getValueAt(seleciona, 9).toString());
-        txtEstado.setText(tblUsuarios.getModel().getValueAt(seleciona, 11).toString());
-        txtCidade.setText(tblUsuarios.getModel().getValueAt(seleciona, 10).toString());
+        int seleciona = tblClientes.getSelectedRow();
+        txtCodigo.setText(tblClientes.getModel().getValueAt(seleciona, 0).toString());
+        txtNome.setText(tblClientes.getModel().getValueAt(seleciona, 1).toString());
+        txtEmail.setText(tblClientes.getModel().getValueAt(seleciona, 2).toString());
+        txtRG.setText(tblClientes.getModel().getValueAt(seleciona, 3).toString());
+        txtCPF.setText(tblClientes.getModel().getValueAt(seleciona, 4).toString());
+        txtData.setText(tblClientes.getModel().getValueAt(seleciona, 5).toString());
+        txtDDD.setText(tblClientes.getModel().getValueAt(seleciona, 6).toString());
+        txtFone.setText(tblClientes.getModel().getValueAt(seleciona, 7).toString());
+        txtEndereco.setText(tblClientes.getModel().getValueAt(seleciona, 8).toString());
+        txtCEP.setText(tblClientes.getModel().getValueAt(seleciona, 9).toString());
+        txtEstado.setText(tblClientes.getModel().getValueAt(seleciona, 11).toString());
+        txtCidade.setText(tblClientes.getModel().getValueAt(seleciona, 10).toString());
     }
 
-    public void editarUsuarios() {
+    public void editarClientes() {
 
         Pessoa p = new Pessoa();
 
@@ -228,7 +228,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         }
     }
 
-    public void deletarUsuarios() {
+    public void deletarClientes() {
        
 
         if (cmbTipo.getSelectedItem() == "PJ") {
@@ -286,7 +286,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblUsuarios = new javax.swing.JTable();
+        tblClientes = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -330,7 +330,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Cadastro de Clientes");
 
-        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -341,12 +341,12 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Título 5", "Título 6", "Título 7", "Título 8", "Título 9", "Título 10", "Título 11"
             }
         ));
-        tblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblUsuariosMouseClicked(evt);
+                tblClientesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tblUsuarios);
+        jScrollPane1.setViewportView(tblClientes);
 
         jLabel1.setText("Código:");
 
@@ -617,13 +617,13 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
-        pesquisarUsuarios();
+        pesquisarClientes();
         listarEstados();
     }//GEN-LAST:event_txtPesquisarKeyReleased
 
-    private void tblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuariosMouseClicked
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
         mostrarItens();
-    }//GEN-LAST:event_tblUsuariosMouseClicked
+    }//GEN-LAST:event_tblClientesMouseClicked
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         limparCampos();
@@ -631,13 +631,13 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        editarUsuarios();
+        editarClientes();
         limparCampos();
         listarEstados();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
-        deletarUsuarios();
+        deletarClientes();
         listarEstados();
     }//GEN-LAST:event_btnDeletarActionPerformed
 
@@ -688,7 +688,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblUsuarios;
+    private javax.swing.JTable tblClientes;
     private javax.swing.JTextField txtCEP;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JTextField txtCidade;

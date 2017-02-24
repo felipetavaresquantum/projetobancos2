@@ -49,7 +49,7 @@ public abstract class PessoaFisicaDAO  {
         return retorno;
     }
 
-    public static boolean cadastrarPesoaFisica(PessoaFisica pessoa) {
+    public static boolean cadastrarPessoaFisica(PessoaFisica pessoa) {
         boolean retorno = false;
         PessoaFisicaDAO.conexao = Conexao.getInstancia();
         PessoaFisicaDAO.conexao.iniciaTransacao();
