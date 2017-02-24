@@ -351,11 +351,6 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         jLabel1.setText("Código:");
 
         txtCodigo.setEnabled(false);
-        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("Nome:");
 
@@ -433,11 +428,6 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         });
 
         cmbCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escolha" }));
-        cmbCidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbCidadeActionPerformed(evt);
-            }
-        });
 
         jLabel13.setText("CEP:");
 
@@ -517,7 +507,7 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
                                         .addGap(30, 30, 30)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmbCidade, 0, 179, Short.MAX_VALUE)
+                                        .addComponent(cmbCidade, 0, 182, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel15)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -671,14 +661,6 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_cmbEstadoActionPerformed
 
-    private void cmbCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCidadeActionPerformed
-//        listarCidade();
-    }//GEN-LAST:event_cmbCidadeActionPerformed
-
-    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
@@ -732,24 +714,6 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
 
         });
 
-//        try {
-//
-//            String sql = "SELECT * FROM estado";
-//            //Prepara para executar o comando sql
-//            pst = con.prepareStatement(sql);
-//            //Armazena o resultado da consulta
-//            rs = pst.executeQuery();
-//
-//            // Enquanto existirem dados, executa o laço de repetição
-//            while (rs.next()) {
-//                //Adiciona os itens na ComboBox
-//                cmbEstado.addItem(String.valueOf(rs.getInt("id_estado")) + "-" + rs.getString("uf"));
-//            }
-//
-//        } catch (Exception e) {
-//            //Rastreia o erro
-//            e.printStackTrace();
-//        }
     }
 
     public void listarCidade(String codEstado) {
@@ -762,25 +726,5 @@ public final class frmCadPessoa extends javax.swing.JInternalFrame {
 
         });
 
-//        try {
-//
-//            String sql = "SELECT * FROM cidade WHERE id_estado = ?";
-//            //Prepara para executar o comando sql
-//            pst = con.prepareStatement(sql);
-//
-//            pst.setInt(1, Integer.parseInt(codEstado));
-//            //Armazena o resultado da consulta
-//            rs = pst.executeQuery();
-//
-//            // Enquanto existirem dados, executa o laço de repetição
-//            while (rs.next()) {
-//                //Adiciona os itens na ComboBox
-//                cmbCidade.addItem(String.valueOf(rs.getInt("id_cidade")) + "-" + rs.getString("cidade"));
-//            }
-//
-//        } catch (Exception e) {
-//            //Rastreia o erro
-//            e.printStackTrace();
-//        }
     }
 }

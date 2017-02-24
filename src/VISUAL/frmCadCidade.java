@@ -69,7 +69,6 @@ public class frmCadCidade extends javax.swing.JInternalFrame {
         int seleciona = tblCidades.getSelectedRow();
         txtCodigo.setText(tblCidades.getModel().getValueAt(seleciona, 0).toString());
         txtCidade.setText(tblCidades.getModel().getValueAt(seleciona, 1).toString());
-//        txtUF.setText(tblEstados.getModel().getValueAt(seleciona, 2).toString());
     }
 
     public void editarCidade() {

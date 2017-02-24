@@ -37,21 +37,6 @@ public class frmCadEstado extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "erro");
         }
-//        String sql = "Insert into estado(descricao, uf) values(?, ?)";
-//        
-//        try{
-//            pst = con.prepareStatement(sql);
-//            pst.setString(1, txtEstado.getText());
-//            pst.setString(2, txtUF.getText());
-//            
-//            pst.execute();
-//            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!", "Cadastrado", JOptionPane.INFORMATION_MESSAGE);
-//            listarEstados();
-//        }
-//        catch(SQLException error){
-//            JOptionPane.showMessageDialog(null, error);
-//            
-//        }
 
     }
 
@@ -76,15 +61,6 @@ public class frmCadEstado extends javax.swing.JInternalFrame {
     }
 
     public void editarEstado() {
-//        boolean retotno = EstadoDAO.update(new Estado(Integer.parseInt(txtCodigo.getText()), txtEstado.getText(), txtUF.getText()));
-//        if (retotno) {
-//            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
-//            listarEstados();
-////            txtEstado.setText("");
-////            txtUF.setText("");
-//        } else {
-//            JOptionPane.showMessageDialog(null, "erro");
-//        }
         
         String sql = "UPDATE estado SET estado=?, uf=? WHERE id_estado=?;";
         
@@ -173,11 +149,6 @@ public class frmCadEstado extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tblEstados);
 
-        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPesquisarActionPerformed(evt);
-            }
-        });
         txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPesquisarKeyReleased(evt);
@@ -350,11 +321,6 @@ public class frmCadEstado extends javax.swing.JInternalFrame {
         cadastrarEstado();
         limparCampos();
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPesquisarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
