@@ -1,0 +1,10 @@
+O banco de dados utilizado é o PostgreSQL dessa forma basta criar uma banco novo e rodar o arquivo Script.sql para criar as rotinas. 
+
+Feito isso no arquivo do java "DadosConexaoBanco.java" vocês vão configurar a conexão de vocês.
+
+O teste a ser feito é informar algum valor inválido para ser inserido para que de erro e o controle de transação entre em ação.
+
+Não pode ser inseridos registros caso de erro nas seguintes tabelas pessoa, fornecedor, endereco, pessoa_fisica.
+
+
+
